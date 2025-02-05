@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeItem, updateQuantity } from './CartSlice';
 import './CartItem.css';
@@ -6,6 +6,8 @@ import './CartItem.css';
 const CartItem = ({ onContinueShopping }) => {
   const cart = useSelector(state => state.cart.items);
   const dispatch = useDispatch();
+  const [showCart, setShowCart] = useState(true);
+  const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
 
   // Calculate total amount for all products in the cart
   const calculateTotalAmount = () => {
@@ -19,6 +21,7 @@ const CartItem = ({ onContinueShopping }) => {
   const handleContinueShopping = (e) => {
     e.preventDefault();
     setShowCart(false);
+    setShowPlants(true);
   };
 
   const handleCheckoutShopping = (e) => {
