@@ -39,6 +39,11 @@ body {
    
 }
 
+/* Grid category */
+.product-category {
+    text-align: center;
+    padding: 20px;
+}
 /* Product Grid */
 .product-grid {
     display:flex;
@@ -217,6 +222,7 @@ body {
   
   .product-button.added-to-cart {
     background-color: grey; /* Grey when product is added */
+    cursor: not-allowed;
   }
   @media (max-width: 1200px) {
     .product-card {
